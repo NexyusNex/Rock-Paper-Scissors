@@ -6,7 +6,20 @@ function getComputerChoice(){
         case 2: return "Paper"; break;
     }
 }
+function getPlayerChoice(){
+    let final;
+    do{
+    let choice = prompt("Rock, paper or scissors?", "type here");
+    choice = choice.toLowerCase();
+    final = choice.charAt(0).toUpperCase() + choice.slice(1);
+    }while(!(final == "Scissors" ||final == "Paper"||final == "Rock"));
+    return final;
+}
 
 let computerSelection = getComputerChoice();
 
 console.log(computerSelection);
+
+let playerSelection = getPlayerChoice();
+
+console.log(playerSelection);
