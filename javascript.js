@@ -16,7 +16,9 @@ function getPlayerChoice(){
     return final;
 }
 
-function playRound(){
+let scoreComputer=0, scorePlayer=0;
+
+function playRound(a, b){
     let computerSelection = getComputerChoice();
     let playerSelection = getPlayerChoice();
 
@@ -29,10 +31,12 @@ function playRound(){
         } else if(computerSelection == "Paper"){
 
             console.log("You lose! Paper beats Rock.");
+            scoreComputer++;
 
         } else if(computerSelection == "Scissors"){
 
             console.log("You win! Rock beats Scissors.");
+            scorePlayer++;
 
         }
     }
@@ -71,8 +75,17 @@ function playRound(){
 }
 
 function game(){
-    for(let i = 0; i<5;i++){
+    for(let i = 0; i < 5; i++){
         playRound();
+    }
+    if(scoreComputer>scorePlayer){
+        console.log("5 rounds have passed. You lose, the computer has more points!");
+    }
+    if(scorePlayer>scoreComputer){
+        console.log("5 rounds have passed. You win, the player has more points!")
+    }
+    if(scoreComputer==scorePlayer){
+        console.log("5 rounds have passed. It's a tie!")
     }
 }
 
