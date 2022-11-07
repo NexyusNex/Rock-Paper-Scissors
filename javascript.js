@@ -17,6 +17,7 @@ function playRound(choice){
         if(computerSelection=="Rock"){
 
             document.getElementById("currentround").innerHTML = "It's a tie! Rock ties with Rock";
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
             checkScore();
 
         } else if(computerSelection == "Paper"){
@@ -47,6 +48,7 @@ function playRound(choice){
         } else if(computerSelection == "Paper"){
 
             document.getElementById("currentround").innerHTML = "It's a tie! Paper ties with Paper.";
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
             checkScore();
 
         } else if(computerSelection == "Scissors"){
@@ -78,6 +80,7 @@ function playRound(choice){
         } else if(computerSelection == "Scissors"){
 
             document.getElementById("currentround").innerHTML = "It's a tie! Scissors tie with Scissors.";
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
             checkScore();
 
         }
@@ -87,13 +90,22 @@ function playRound(choice){
 function checkScore(){
     if(rounds==5){
         if(scoreComputer>scorePlayer){
-            console.log("5 rounds have passed. You lose, the computer has more points!");
+            alert("5 rounds have passed. You lose, the computer has more points!");
+            scoreComputer=0; scorePlayer=0, rounds=0;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+            return;
         }
         if(scorePlayer>scoreComputer){
-            console.log("5 rounds have passed. You win, the player has more points!")
+            alert("5 rounds have passed. You win, the player has more points!");
+            scoreComputer=0; scorePlayer=0, rounds=0;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+            return;
         }
         if(scoreComputer==scorePlayer){
-            console.log("5 rounds have passed. It's a tie!")
+            alert("5 rounds have passed. It's a tie!");
+            scoreComputer=0; scorePlayer=0, rounds=0;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+            return;
         }
     }
 }
