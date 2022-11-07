@@ -90,21 +90,21 @@ function playRound(choice){
 function checkScore(){
     if(rounds==5){
         if(scoreComputer>scorePlayer){
+            alert("5 rounds have passed. You lose, the computer has more points!");
             scoreComputer=0; scorePlayer=0, rounds=0;
             document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
-            alert("5 rounds have passed. You lose, the computer has more points!");
             return;
         }
         if(scorePlayer>scoreComputer){
+            alert("5 rounds have passed. You win, the player has more points!");
             scoreComputer=0; scorePlayer=0, rounds=0;
             document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
-            alert("5 rounds have passed. You win, the player has more points!");
             return;
         }
         if(scoreComputer==scorePlayer){
+            alert("5 rounds have passed. It's a tie!");
             scoreComputer=0; scorePlayer=0, rounds=0;
             document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
-            alert("5 rounds have passed. It's a tie!");
             return;
         }
     }
