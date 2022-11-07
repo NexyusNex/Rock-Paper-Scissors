@@ -32,11 +32,15 @@ function playRound(choice){
 
             document.getElementById("currentround").innerHTML = "You lose! Paper beats Rock.";
             scoreComputer++;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+
 
         } else if(computerSelection == "Scissors"){
 
             document.getElementById("currentround").innerHTML = "You win! Rock beats Scissors.";
             scorePlayer++;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+
 
         }
     }
@@ -46,6 +50,8 @@ function playRound(choice){
 
             document.getElementById("currentround").innerHTML = "You win! Paper beats Rock";
             scorePlayer++;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+
 
         } else if(computerSelection == "Paper"){
 
@@ -55,6 +61,8 @@ function playRound(choice){
 
             document.getElementById("currentround").innerHTML = "You lose! Scissors beat Paper.";
             scoreComputer++;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+
             
         }
     }
@@ -64,11 +72,14 @@ function playRound(choice){
 
             document.getElementById("currentround").innerHTML = "You lose! Rock beats Scissors.";
             scoreComputer++;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
 
         } else if(computerSelection == "Paper"){
 
             document.getElementById("currentround").innerHTML = "You win! Scissors beat Paper.";
             scorePlayer++;
+            document.getElementById("results").innerHTML = `player score: ${scorePlayer} computer score: ${scoreComputer} `;
+
 
         } else if(computerSelection == "Scissors"){
 
@@ -78,10 +89,7 @@ function playRound(choice){
     }
 }
 
-function game(){
-    for(let i = 0; i < 5; i++){
-        playRound();
-    }
+function checkScore(){
     if(scoreComputer>scorePlayer){
         console.log("5 rounds have passed. You lose, the computer has more points!");
     }
